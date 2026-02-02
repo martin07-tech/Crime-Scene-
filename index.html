@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRIME SCENE | Leave Evidence</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CRIME SCENE</div>
+  <div class="slogan">Leave Evidence</div>
+</header>
+
+<nav>
+  <div>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('shop')">Shop</a>
+  </div>
+
+  <input type="search" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+
+  <div class="cart" onclick="toggleCart()">🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page-section">
+  <div class="home-hero">
+    <h1>CRIME SCENE</h1>
+    <p>Streetwear for those who move different.</p>
+  </div>
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" class="image-modal" onclick="closeImage()">
+    <img id="fullImage">
+  </div>
+
+  <div class="ambassador">
+    <h2>OUR FACE</h2>
+    <div class="ambassador-slider" id="ambassadorSlider">
+
+      <div class="ambassador-card">
+        <img src="assets/images/IMG-20260201-WA0130.jpg" onclick="openImage(this.src)">
+        <div class="ambassador-info">
+          <h3>Arrestd</h3>
+          <p>Fearless. Silent. Built to leave evidence.</p>
+        </div>
+      </div>
+
+      <div class="ambassador-card">
+        <img src="assets/images/IMG-20260201-WA0102.jpg" onclick="openImage(this.src)">
+        <div class="ambassador-info">
+          <h3>WANTED</h3>
+          <p>Discipline over noise.</p>
+        </div>
+      </div>
+
+      <div class="ambassador-card">
+        <img src="assets/images/IMG-20260201-WA0106.jpg" onclick="openImage(this.src)">
+        <div class="ambassador-info">
+          <h3>PROTECT EVIDENCE</h3>
+          <p>The scene changed when we arrived.</p>
+        </div>
+      </div>
+
+      <div class="ambassador-card">
+        <img src="assets/images/IMG-20260201-WA0088.jpg" onclick="openImage(this.src)">
+        <div class="ambassador-info">
+          <h3>Trying To Run</h3>
+          <p>If you’re wearing Crime Scene, you’re already guilty.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="news">
+    <h2>Latest News</h2>
+    <div class="news-grid">
+      <div class="news-card">🔥 New Drop Incoming</div>
+      <div class="news-card">🚚 Free Delivery | 💵 Cash Only</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="page-section" style="display:none;">
+  <h2>Shop</h2>
+  <div class="product-grid">
+    <div class="product">
+      <img src="assets/images/crimescenehoodie.jpg">
+      <h3>Crime Scene Hoodie</h3>
+      <p>R300</p>
+      <button onclick="addToCart('Crime Scene Hoodie',300)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- CART -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-box">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <h4>Total: R <span id="cartTotal">0</span></h4>
+    <button onclick="sendOrder()">Order via WhatsApp</button>
+    <button onclick="toggleCart()">Close</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 CRIME SCENE. All rights reserved.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
