@@ -10,6 +10,24 @@ function addToCart(name, price){
   updateCart();
 }
 
+function filterProducts(category, btn) {
+  const products = document.querySelectorAll(".product");
+  const buttons = document.querySelectorAll(".product-nav button");
+
+  // Button active state
+  buttons.forEach(button => button.classList.remove("active"));
+  btn.classList.add("active");
+
+  products.forEach(product => {
+    if (category === "all") {
+      product.style.display = "block";
+    } else {
+      product.style.display =
+        product.dataset.category === category ? "block" : "none";
+    }
+  });
+}
+
 function updateCart(){
   const items = document.getElementById('cartItems');
   items.innerHTML = '';
